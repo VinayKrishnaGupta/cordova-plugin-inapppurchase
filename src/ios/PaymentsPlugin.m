@@ -93,6 +93,37 @@
 
 }
 
+- (void)buyWithserId:(CDVInvokedUrlCommand *)command {
+  id productId = [command.arguments objectAtIndex:0];
+  id useridentifier = [command.arguments objectAtIndex:1];
+  if (![productId isKindOfClass:[NSString class]]) {
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"ProductId must be a string"];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    return;
+  }
+  [[RMStore defaultStore] addPayment:productId user:useridentifier success:^(SKPaymentTransaction *transaction) {
+    NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+    NSData *receiptData = [NSData dataWithContentsOfURL:receiptURL];
+    NSString *encReceipt = [receiptData base64EncodedStringWithOptions:0];
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:@{
+                                                                                                                   @"transactionId": NILABLE(transaction.transactionIdentifier),
+                                                                                                                   @"receipt": NILABLE(encReceipt)
+                                                                                                                   }];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+  } failure:^(SKPaymentTransaction *transaction, NSError *error) {
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:@{
+                                                                                                                   @"errorCode": NILABLE([NSNumber numberWithInteger:error.code]),
+                                                                                                                   @"errorMessage": NILABLE(error.localizedDescription)
+                                                                                                                   }];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  }];
+
+}
+
 - (void)restorePurchases:(CDVInvokedUrlCommand *)command {
   [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions){
     NSMutableArray *validTransactions = [NSMutableArray array];
