@@ -118,6 +118,9 @@ inAppPurchase.subscribe = function (productId) {
   return inAppPurchase.buy(productId);
 };
 
+inAppPurchase.subscribeWithUserId = (productId, userIdentifier) => {
+  return inAppPurchase.buyWithUserId(productId, userIdentifier);
+}
 /**
  * This function exists so that the iOS plugin API will be compatible with that of Android -
  * where this function is required.
