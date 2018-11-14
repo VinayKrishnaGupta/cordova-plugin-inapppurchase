@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/AlexDisler/cordova-plugin-inapppurchase.git"
+    "url": "https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase.git"
   },
   "keywords": [
     "cordova",
@@ -32,9 +32,9 @@
     "ionic"
   ],
   "author": {
-    "name": "Alex Disler",
-    "email": "alexdisler@gmail.com",
-    "url": "alexdisler.com"
+    "name": "Vinay Gupta",
+    "email": "vinaygupta.iitkgp@gmail.com",
+    "url": "mcqdb.com"
   },
   "license": "MIT",
   "homepage": "https://github.com/AlexDisler/cordova-plugin-inapppurchase",
