@@ -10,8 +10,8 @@
   <engines>
     <engine name="cordova" version=">=5.0.0" />
   </engines>
-  <repo>https://github.com/AlexDisler/cordova-plugin-inapppurchase.git</repo>
-  <issue>https://github.com/AlexDisler/cordova-plugin-inapppurchase/issues</issue>
+  <repo>https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase.git</repo>
+  <issue>https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase/issues</issue>
 
   <license>MIT</license>
   <keywords>cordova,phonegap,ionic,purchase,storekit,ios,android,play,appstore</keywords>
