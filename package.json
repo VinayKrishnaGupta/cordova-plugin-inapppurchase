@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase.git"
+    "url": "git+https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase.git"
   },
   "keywords": [
     "cordova",
@@ -31,13 +31,9 @@
     "play",
     "ionic"
   ],
-  "author": {
-    "name": "Vinay Gupta",
-    "email": "vinaygupta.iitkgp@gmail.com",
-    "url": "mcqdb.com"
-  },
+  "author": "Vinay Gupta <vinaygupta.iitkgp@gmail.com> (mcqdb.com)",
   "license": "MIT",
-  "homepage": "https://github.com/AlexDisler/cordova-plugin-inapppurchase",
+  "homepage": "https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase",
   "devDependencies": {
     "babel-core": "6.5.2",
     "babel-plugin-syntax-async-functions": "6.5.0",
@@ -52,5 +48,21 @@
     "gulp-util": "^3.0.7",
     "mocha": "^2.4.5",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-inapppurchase-userid",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ]
 }
