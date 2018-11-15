@@ -18,7 +18,7 @@ If you would like to maintain this project, get in touch.
 
 ## Install
 
-    $ cordova plugin add cordova-plugin-inapppurchase
+    $ cordova plugin add cordova-plugin-inapppurchase-userid
 
 ## Configuration
 
