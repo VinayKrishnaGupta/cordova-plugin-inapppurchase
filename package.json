@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-inapppurchase-userid",
+  "name": "cordova-plugin-inapppurchaseuserid",
   "version": "1.2.0",
   "description": "A lightweight cordova plugin for in app purchases on iOS and Android with a simple promise based API.",
   "main": "www/index-ios.js",
@@ -35,7 +35,7 @@
   "license": "MIT",
   "homepage": "https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase",
   "devDependencies": {
-    "babel-core": "6.5.2",
+    "babel-core": "^6.26.3",
     "babel-plugin-syntax-async-functions": "6.5.0",
     "babel-plugin-transform-regenerator": "6.5.2",
     "babel-polyfill": "6.5.0",
@@ -53,7 +53,7 @@
     "url": "https://github.com/VinayKrishnaGupta/cordova-plugin-inapppurchase/issues"
   },
   "cordova": {
-    "id": "cordova-plugin-inapppurchase-userid",
+    "id": "cordova-plugin-inapppurchaseuserid",
     "platforms": [
       "ios",
       "android"
