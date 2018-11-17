@@ -93,7 +93,7 @@
 
 }
 
-- (void)buyWithserId:(CDVInvokedUrlCommand *)command {
+- (void)buyWithUserId:(CDVInvokedUrlCommand *)command {
   id productId = [command.arguments objectAtIndex:0];
   id useridentifier = [command.arguments objectAtIndex:1];
   if (![productId isKindOfClass:[NSString class]]) {
