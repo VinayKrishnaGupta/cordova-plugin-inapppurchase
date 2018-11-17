@@ -109,6 +109,20 @@ inAppPurchase.buy = function (productId) {
   });
 };
 
+inAppPurchase.buyWithUserId = (productId, userIdentifier) => {
+  return new Promise((resolve, reject) => {
+    if(!inAppPurchase.utils.validString(productId) || !inAppPurchase.utils.validString(userIdentifier) ) {
+      reject(new Error(inAppPurchase.utils.errors[102]));
+    } else {
+      nativeCall('buyWithUserId', [productId, userIdentifier]).then((res) => {
+        resolve({
+          transactionId : res.transactionId,
+          receipt       : res.receipt
+        });
+      }).catch(reject);
+    }
+  });
+};
 /**
  * This function exists so that the iOS plugin API will be compatible with that of Android -
  * where this function is required.
